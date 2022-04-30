@@ -194,3 +194,19 @@ set.add(l2);
 int n = 2;
 (1 << n) == (Math.pow(2, n)) 
 ```
+
+#### 快速幂
+
+```Java
+long fastPow(int _x, int n){
+    long res = 1, x = _x;
+    
+    while (n > 0){
+         if ((n & 1) == 1) res = (res * x);
+	 x = (x * x);
+	 n >>= 1;
+     }
+     
+    return res;
+}
+```
