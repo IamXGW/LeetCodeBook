@@ -197,6 +197,8 @@ int n = 2;
 
 #### 快速幂
 
+目的是：
+
 ```Java
 long fastPow(int x, int n){
     long res = 1;
@@ -213,6 +215,8 @@ long fastPow(int x, int n){
 ```
 
 #### 快速乘
+
+目的是：
 
 ```Java
 long fastMul(long a, long k) {
