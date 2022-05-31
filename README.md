@@ -198,15 +198,33 @@ int n = 2;
 #### 快速幂
 
 ```Java
-long fastPow(int _x, int n){
-    long res = 1, x = _x;
-    
+long fastPow(int x, int n){
+    long res = 1;
+
     while (n > 0){
-         if ((n & 1) == 1) res = (res * x);
-	 x = (x * x);
-	 n >>= 1;
-     }
-     
+        if ((n & 1) == 1) res = (res * x);
+
+        n >>= 1;
+        x = (x * x);
+    }
+
+    return res;
+}
+```
+
+#### 快速乘
+
+```Java
+long fastMul(long a, long k) {
+    long res = 0;
+
+    while (k > 0) {
+        if ((k & 1) == 1) res += a;
+
+        k >>= 1;
+        a += a;
+    }
+
     return res;
 }
 ```
