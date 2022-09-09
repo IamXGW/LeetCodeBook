@@ -232,3 +232,7 @@ long fastMul(long a, long k) {
     return res;
 }
 ```
+
+#### 子集个数
+
+包含空集：`2^n`，不包含空集：`2^n-1`。
