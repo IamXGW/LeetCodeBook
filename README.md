@@ -202,14 +202,11 @@ int n = 2;
 ```Java
 long fastPow(int x, int n){
     long res = 1;
-
     while (n > 0){
-        if ((n & 1) == 1) res = (res * x);
-
+        if ((n & 1) == 1) res *= x;
         n >>= 1;
-        x = (x * x);
+        x *= x;
     }
-
     return res;
 }
 ```
@@ -221,14 +218,11 @@ long fastPow(int x, int n){
 ```Java
 long fastMul(long a, long k) {
     long res = 0;
-
     while (k > 0) {
         if ((k & 1) == 1) res += a;
-
         k >>= 1;
         a += a;
     }
-
     return res;
 }
 ```
@@ -236,3 +230,28 @@ long fastMul(long a, long k) {
 #### 子集个数
 
 包含空集：`2^n`，不包含空集：`2^n-1`。
+
+
+
+#### GCD
+
+```Java
+// 方法一（递归）
+int gcd(int a, int b) {
+    if (b == 0) return a;
+    return gcd(b, a % b);
+}
+
+// 方法二（迭代）
+int gcd(int a, int b) {
+    while (a % b != 0) {
+        int t = a % b;
+        a = b;
+        b = t;
+    }
+    return b;
+}
+```
+
+
+
